@@ -36,3 +36,13 @@ independent_train,independent_test,dependent_train,dependent_test = train_test_s
 print("TEST/TRAIN DATA")
 print(dependent_test)
 print("*************************************************")
+
+#Apply Feature scaling on the Model to Standardise the data for easy calculations
+from sklearn.preprocessing import StandardScaler
+independent_SC = StandardScaler()
+independent_train = independent_SC.fit_transform(independent_train)
+independent_test = independent_SC.transform(independent_test)
+print("*************************************************")
+print(independent_train )
+print(independent_test)
+print("*************************************************")
