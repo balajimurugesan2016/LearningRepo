@@ -7,6 +7,7 @@ independent = dataset.iloc[:, :-1].values
 print(independent)
 dependent = dataset.iloc[:, 3].values
 print(dependent)
+print("*************************************************")
 #Clear missing data
 #  Imputer does fill the missing values with Average values
 #fill the missing values with Average values
@@ -26,5 +27,12 @@ print(independent)
 label_dependent = LabelEncoder()
 dependent = label_dependent.fit_transform(dependent)
 print(dependent)
+print("*************************************************")
+#split test and train data
+from sklearn.model_selection import  train_test_split
+#returns a list of arrays. Read the array list and populate in different variables
+independent_train,independent_test,dependent_train,dependent_test = train_test_split(independent,dependent,test_size=0.2,random_state=0)
 
-
+print("TEST/TRAIN DATA")
+print(dependent_test)
+print("*************************************************")
