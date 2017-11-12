@@ -14,4 +14,13 @@ from sklearn.preprocessing import Imputer
 imputer = Imputer(missing_values = "NaN", strategy="mean",axis = 0)
 imputer = imputer.fit(independent[:, 1:3])
 independent[:,1:3] = imputer.transform(independent[:, 1:3])
-###
+#Create Categorical variables
+from sklearn.preprocessing import LabelEncoder,OneHotEncoder
+label_independent = LabelEncoder()
+independent[:, 0] = label_independent.fit_transform(independent[:, 0])
+#Convert the Numerical category into three columns binary for model prediction
+onehot_independent = OneHotEncoder(categorical_features=0)
+independent = onehot_independent.fit_transform(independent)
+print(independent)
+
+
