@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plot
 import pandas as pd
 #import a dataset
-dataset = pd.read_csv('Programs/Data.csv')
+dataset = pd.read_csv('Data.csv')
 independent = dataset.iloc[:, :-1].values
 dependent = dataset.iloc[:, 3].values
 
