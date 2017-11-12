@@ -14,4 +14,4 @@ from sklearn.preprocessing import Imputer
 imputer = Imputer(missing_values = "NaN", strategy="mean",axis = 0)
 imputer = imputer.fit(independent[:, 1:3])
 independent[:,1:3] = imputer.transform(independent[:, 1:3])
-print (independent)
+###
