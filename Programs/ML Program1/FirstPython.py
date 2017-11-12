@@ -19,8 +19,12 @@ from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 label_independent = LabelEncoder()
 independent[:, 0] = label_independent.fit_transform(independent[:, 0])
 #Convert the Numerical category into three columns binary for model prediction
-onehot_independent = OneHotEncoder(categorical_features=0)
-independent = onehot_independent.fit_transform(independent)
+onehot_independent = OneHotEncoder(categorical_features=[0])
+independent = onehot_independent.fit_transform(independent).toarray()
+print("Independent after oneHot")
 print(independent)
+label_dependent = LabelEncoder()
+dependent = label_dependent.fit_transform(dependent)
+print(dependent)
 
 
