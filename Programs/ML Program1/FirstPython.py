@@ -40,7 +40,7 @@ print("*************************************************")
 #Apply Feature scaling on the Model to Standardise the data for easy calculations
 from sklearn.preprocessing import StandardScaler
 independent_SC = StandardScaler()
-independent_train = independent_SC.fit_transform(independent_train)
+independent_train = independent_SC.fit_transform(independent_train) #fit the Standard scaler to the model and transform the model
 independent_test = independent_SC.transform(independent_test)
 print("*************************************************")
 print(independent_train )
